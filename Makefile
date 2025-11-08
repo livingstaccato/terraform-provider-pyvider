@@ -262,10 +262,20 @@ lint-examples: ## Run terraform fmt on examples
 	@terraform fmt -recursive examples/ || true
 	@echo "$(GREEN)✅ Examples formatted$(NC)"
 
+.PHONY: docs-setup
+docs-setup: ## Extract theme assets from provide-foundry
+	@echo "$(BLUE)📦 Extracting theme assets from provide-foundry...$(NC)"
+	@python3 -c "from provide.foundry.config import extract_base_mkdocs; from pathlib import Path; extract_base_mkdocs(Path('.'))"
+	@echo "$(GREEN)✅ Theme assets ready$(NC)"
+
 .PHONY: docs-serve
-docs-serve: docs ## Build and serve documentation locally
-	@echo "$(BLUE)🌐 Serving documentation on http://localhost:8000$(NC)"
-	@cd docs && python3 -m http.server 8000
+docs-serve: docs-setup docs ## Build and serve documentation locally
+	@echo "$(BLUE)🌐 Serving documentation on http://127.0.0.1:8010$(NC)"
+	@echo "$(YELLOW)⚠️  Note: Using local config for development$(NC)"
+	@echo "INHERIT: mkdocs.yml" > mkdocs-local.yml
+	@echo "site_url: http://127.0.0.1:8010/" >> mkdocs-local.yml
+	@mkdocs serve -f mkdocs-local.yml
+	@rm -f mkdocs-local.yml
 
 # ==============================================================================
 # 🧪 Testing & Validation
