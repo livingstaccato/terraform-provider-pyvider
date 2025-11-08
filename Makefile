@@ -270,12 +270,10 @@ docs-setup: ## Extract theme assets from provide-foundry
 
 .PHONY: docs-serve
 docs-serve: docs-setup docs ## Build and serve documentation locally
-	@echo "$(BLUE)🌐 Serving documentation on http://127.0.0.1:8010$(NC)"
-	@echo "$(YELLOW)⚠️  Note: Using local config for development$(NC)"
-	@echo "INHERIT: mkdocs.yml" > mkdocs-local.yml
-	@echo "site_url: http://127.0.0.1:8010/" >> mkdocs-local.yml
-	@mkdocs serve -f mkdocs-local.yml
-	@rm -f mkdocs-local.yml
+	@echo "$(BLUE)🌐 Serving documentation at:$(NC)"
+	@echo "$(GREEN)  http://127.0.0.1:8010/providers/provide-io/pyvider/latest/docs/$(NC)"
+	@echo "$(YELLOW)⚠️  Note: Full path required for Terraform Registry compatibility$(NC)"
+	@mkdocs serve
 
 # ==============================================================================
 # 🧪 Testing & Validation
