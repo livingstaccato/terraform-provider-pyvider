@@ -424,3 +424,4 @@ test-logs-*/
 
 # Extracted provide.io tooling artifacts
 .provide/
+docs/.provide
