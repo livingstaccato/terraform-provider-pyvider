@@ -160,6 +160,7 @@ clean: ## Clean build artifacts and cache
 clean-docs: ## Clean entire documentation directory
 	@echo "$(BLUE)🧹 Cleaning documentation...$(NC)"
 	@rm -rf docs/*
+	@rm -f docs/.provide
 	@echo "$(GREEN)✅ Documentation cleaned$(NC)"
 
 .PHONY: clean-plating
