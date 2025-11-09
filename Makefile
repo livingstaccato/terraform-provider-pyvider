@@ -1,8 +1,13 @@
-# Pyvider Provider Makefile Helper
-# Provides a fantastic developer experience with simple, memorable commands
+# Terraform Provider Makefile
+# Canonical Makefile for all terraform-provider-* projects in the provide.io ecosystem
+# This file is maintained in provide-foundry and extracted to provider projects
+#
+# Source: provide-foundry/src/provide/foundry/config/Makefile.provider.tmpl
+# Do not edit directly in provider projects - changes will be overwritten
+# To update: run `make update-makefile` or extract from provide-foundry
 
 # Configuration - Auto-discovered
-PROVIDER_NAME := $(shell grep '^name = ' pyproject.toml 2>/dev/null | head -1 | cut -d'"' -f2 || echo "terraform-provider-pyvider")
+PROVIDER_NAME := $(shell grep '^name = ' pyproject.toml 2>/dev/null | head -1 | cut -d'"' -f2 || echo "terraform-provider-unknown")
 VERSION := $(shell cat VERSION 2>/dev/null || echo "0.0.0")
 PROVIDER_SHORT_NAME := $(shell echo $(PROVIDER_NAME) | sed 's/terraform-provider-//')
 PLATFORMS := linux_amd64 linux_arm64 darwin_amd64 darwin_arm64
