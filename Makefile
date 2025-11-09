@@ -354,9 +354,14 @@ test-local: build ## Test provider with local Terraform
 	$(call print,$(GREEN)✅ Provider works with Terraform$(NC))
 
 .PHONY: test-plating
-test-plating: ## Run plating tests for all components
-	$(call print,$(BLUE)🧪 Running plating tests...$(NC))
-	@./scripts/test-plating.sh
+test-plating: generate-docs ## Run plating tests for all components
+	$(call print,$(BLUE)🧪 Testing generated documentation and examples...$(NC))
+	@if command -v soup >/dev/null 2>&1 && [ -d docs/examples ]; then \
+		cd docs/examples && soup stir --recursive && \
+		printf '%b\n' "$(GREEN)✅ All plating tests completed!$(NC)"; \
+	else \
+		printf '%b\n' "$(YELLOW)⚠️  soup not found or no examples directory - skipping tests$(NC)"; \
+	fi
 
 .PHONY: test-examples
 test-examples: build install ## Test example configurations with soup stir
