@@ -2802,11 +2802,11 @@ docs = [
 
 [package.metadata]
 requires-dist = [
-    { name = "flavorpack", specifier = ">=0.0.1026.post0" },
-    { name = "plating", specifier = ">=0.0.1100" },
-    { name = "provide-foundation", specifier = ">=0.0.1100.post1" },
-    { name = "pyvider" },
-    { name = "pyvider-components" },
+    { name = "flavorpack", specifier = ">=0.0.0" },
+    { name = "plating", specifier = ">=0.0.0" },
+    { name = "provide-foundation", specifier = ">=0.0.0" },
+    { name = "pyvider", specifier = ">=0.0.0" },
+    { name = "pyvider-components", specifier = ">=0.0.0" },
 ]
 
 [package.metadata.requires-dev]
