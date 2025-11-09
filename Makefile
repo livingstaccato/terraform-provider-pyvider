@@ -2,7 +2,7 @@
 # Provides a fantastic developer experience with simple, memorable commands
 
 # Configuration - Auto-discovered
-PROVIDER_NAME := $(shell grep '^name = ' pyproject.toml 2>/dev/null | cut -d'"' -f2 || echo "terraform-provider-pyvider")
+PROVIDER_NAME := $(shell grep '^name = ' pyproject.toml 2>/dev/null | head -1 | cut -d'"' -f2 || echo "terraform-provider-pyvider")
 VERSION := $(shell cat VERSION 2>/dev/null || echo "0.0.0")
 PROVIDER_SHORT_NAME := $(shell echo $(PROVIDER_NAME) | sed 's/terraform-provider-//')
 PLATFORMS := linux_amd64 linux_arm64 darwin_amd64 darwin_arm64
