@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     pyvider = {
-      source  = "local/providers/pyvider"
+      source = "local/providers/pyvider"
     }
   }
 }
