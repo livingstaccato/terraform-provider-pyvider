@@ -264,9 +264,9 @@ lint-examples: ## Run terraform fmt on examples
 	@echo "$(GREEN)✅ Examples formatted$(NC)"
 
 .PHONY: docs-setup
-docs-setup: ## Extract theme assets from provide-foundry
+docs-setup: venv ## Extract theme assets from provide-foundry
 	@echo "$(BLUE)📦 Extracting theme assets from provide-foundry...$(NC)"
-	@python3 -c "from provide.foundry.config import extract_base_mkdocs; from pathlib import Path; extract_base_mkdocs(Path('.'))"
+	@. .venv/bin/activate && python -c "from provide.foundry.config import extract_base_mkdocs; from pathlib import Path; extract_base_mkdocs(Path('.'))"
 	@if [ ! -L docs/.provide ]; then \
 		echo "$(BLUE)🔗 Creating symlink to .provide in docs/...$(NC)"; \
 		ln -sf ../.provide docs/.provide; \
