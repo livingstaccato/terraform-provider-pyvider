@@ -164,7 +164,6 @@ clean: ## Clean build artifacts and cache
 clean-docs: ## Clean entire documentation directory
 	$(call print,$(BLUE)🧹 Cleaning documentation...$(NC))
 	@rm -rf docs/*
-	@rm -f docs/.provide
 	$(call print,$(GREEN)✅ Documentation cleaned$(NC))
 
 .PHONY: clean-plating
@@ -271,10 +270,6 @@ lint-examples: ## Run terraform fmt on examples
 docs-setup: venv ## Extract theme assets from provide-foundry
 	$(call print,$(BLUE)📦 Extracting theme assets from provide-foundry...$(NC))
 	@. .venv/bin/activate && python -c "from provide.foundry.config import extract_base_mkdocs; from pathlib import Path; extract_base_mkdocs(Path('.'))"
-	@if [ ! -L docs/.provide ]; then \
-		printf '%b\n' "$(BLUE)🔗 Creating symlink to .provide in docs/...$(NC)"; \
-		ln -sf ../.provide docs/.provide; \
-	fi
 	$(call print,$(GREEN)✅ Theme assets ready$(NC))
 
 .PHONY: docs-serve
