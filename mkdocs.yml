@@ -11,7 +11,7 @@ copyright: Copyright &copy; 2024-2025 provide.io
 dev_addr: 127.0.0.1:8010
 docs_dir: docs
 hooks:
-- provide.foundry.theme.hooks.terraform_provider
+- scripts/mkdocs_hooks.py
 plugins:
 - search
 theme:
