@@ -316,7 +316,7 @@ jobs:
           \`\`\`hcl
           terraform {
             required_providers {
-              tofusoup = {
+              pyvider = {
                 source  = "provide-io/pyvider"
                 version = "${{ steps.version.outputs.VERSION }}"
               }

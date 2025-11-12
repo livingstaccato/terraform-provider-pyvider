@@ -225,14 +225,14 @@ jobs:
           cat > main.tf << 'EOF'
           terraform {
             required_providers {
-              tofusoup = {
-                source  = "local/providers/tofusoup"
+              pyvider = {
+                source  = "local/providers/pyvider"
                 version = ">= 0.0.1"
               }
             }
           }
 
-          provider "tofusoup" {}
+          provider "pyvider" {}
 
           output "test" {
             value = "smoke test - provider initialized"
@@ -270,14 +270,14 @@ jobs:
           cat > main.tf << 'EOF'
           terraform {
             required_providers {
-              tofusoup = {
-                source  = "local/providers/tofusoup"
+              pyvider = {
+                source  = "local/providers/pyvider"
                 version = ">= 0.0.1"
               }
             }
           }
 
-          provider "tofusoup" {}
+          provider "pyvider" {}
 
           data "pyvider_provider_info" "aws" {
             namespace = "hashicorp"
