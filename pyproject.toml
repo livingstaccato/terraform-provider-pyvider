@@ -1,0 +1,72 @@
+[project]
+name = "terraform-provider-pyvider"
+dynamic = ["version"]
+description = "The official Pyvider provider, built with Pyvider."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flavorpack>=0.0.0",
+    "plating>=0.0.0",
+    "provide-foundation>=0.0.0",
+    "pyvider>=0.0.0",
+    "pyvider-components>=0.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "provide-testkit[standard,build]",
+    "flavorpack",
+    "plating",
+]
+docs = [
+    "provide-testkit[docs]",
+]
+
+[project.scripts]
+terraform-provider-pyvider = "pyvider.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+packages = []
+
+[tool.flavor]
+entry_point = "pyvider.cli:main"
+output_path = "dist/terraform-provider-pyvider"
+# Ensure the binary is named terraform-provider-pyvider so detection works
+command = "{workenv}/bin/terraform-provider-pyvider"
+
+[tool.flavor.metadata]
+package_name = "terraform-provider-pyvider"
+
+[tool.flavor.build]
+# This meta package just brings together components
+dependencies = []
+exclude = [
+    "**/.terraform/**",
+    "**/.venv/**", 
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "**/*.pyo",
+    "**/.DS_Store",
+]
+
+[tool.flavor.signing]
+private_key_path = "keys/provider-private.key"
+public_key_path = "keys/provider-public.key"
+
+[tool.flavor.execution]
+# Runtime environment configuration for Terraform provider protocol
+[tool.flavor.execution.runtime]
+[tool.flavor.execution.runtime.env]
+# Pass through all Terraform, Pyvider, and Foundation environment variables as-is
+pass = ["TF_*", "PLUGIN_*", "PYVIDER_*", "PROVIDE_*", "FOUNDATION_*"]
+
+[pyvider]
+# Provider metadata
+name = "pyvider"
+# Component packages to use for this provider
+component_packages = ["pyvider.components"]
