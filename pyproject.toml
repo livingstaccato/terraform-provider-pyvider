@@ -15,11 +15,11 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-    "flavorpack>=0.0.0",
-    "plating>=0.0.0",
-    "provide-foundation>=0.0.0",
-    "pyvider>=0.0.0",
-    "pyvider-components>=0.0.0",
+    "flavorpack",
+    "plating",
+    "provide-foundation",
+    "pyvider",
+    "pyvider-components",
 ]
 
 [dependency-groups]
