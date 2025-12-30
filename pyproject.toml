@@ -53,10 +53,6 @@ docs = [
 [project.scripts]
 terraform-provider-pyvider = "pyvider.cli:main"
 
-[build-system]
-requires = ["setuptools>=75.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [tool.setuptools]
 py-modules = []
 packages = []
