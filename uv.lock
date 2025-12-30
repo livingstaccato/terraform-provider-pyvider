@@ -3004,9 +3004,9 @@ docs = [
 
 [package.metadata]
 requires-dist = [
-    { name = "flavorpack", specifier = ">=0.0.1026.post0" },
-    { name = "plating", specifier = ">=0.0.1100" },
-    { name = "provide-foundation", specifier = ">=0.0.1100.post1" },
+    { name = "flavorpack" },
+    { name = "plating" },
+    { name = "provide-foundation" },
     { name = "pyvider" },
     { name = "pyvider-components" },
 ]
