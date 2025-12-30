@@ -1,3 +1,13 @@
+#
+# terraform-provider-pyvider/pyproject.toml
+#
+# The official Pyvider provider, built with Pyvider
+#
+
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "terraform-provider-pyvider"
 dynamic = ["version"]
