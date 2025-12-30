@@ -83,6 +83,32 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 addopts = ""
 # Parallel execution: pytest -n <workers> (range: 2-16, recommend: CPU cores or 8, max: 16 to avoid xdist hang)
+
+[tool.coverage.run]
+branch = true
+source = ["."]
+
+[tool.coverage.report]
+fail_under = 70
+show_missing = true
+skip_covered = true
+precision = 2
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "def __repr__",
+    "def __str__",
+    "pass",
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.coverage.xml]
+output = "coverage.xml"
 [tool.flavor]
 entry_point = "pyvider.cli:main"
 output_path = "dist/terraform-provider-pyvider"
