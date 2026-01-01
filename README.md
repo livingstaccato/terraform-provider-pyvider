@@ -53,7 +53,7 @@ pyvider-components (examples) ──packages──> terraform-provider-pyvider (
 
 **New to the pyvider provider?** Check out our comprehensive tutorial:
 
-**[→ Getting Started Tutorial](docs/guides/02-getting-started.md)** - Complete walkthrough in 10-15 minutes
+**[→ Getting Started Tutorial](docs/guides/getting-started.md)** - Complete walkthrough in 10-15 minutes
 
 The tutorial covers:
 - Installing and configuring the provider
