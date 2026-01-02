@@ -28,7 +28,9 @@ The tutorial covers:
 - Updating and destroying resources
 
 ## Documentation
-Documentation lives in [docs/index.md](docs/index.md).
+- [Documentation index](docs/index.md)
+- [Getting started](docs/guides/getting-started.md)
+- [Examples](examples/README.md)
 
 ## Development
 
