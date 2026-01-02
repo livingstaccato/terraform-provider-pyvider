@@ -119,8 +119,9 @@ Configure the provider in your Terraform code. Most resources and data sources w
 terraform {
   required_providers {
     pyvider = {
-      source  = "provide-io/pyvider"
-      version = "~> 0.3"
+      source  = "local/providers/pyvider"
+      version = ">= 0.0.0"
+      # For production, pin to specific version: version = "~> 0.3"
     }
   }
 }
