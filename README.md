@@ -19,7 +19,7 @@
 
 **New to the pyvider provider?** Check out our comprehensive tutorial:
 
-**[→ Getting Started Tutorial](docs/guides/getting-started.md)** - Complete walkthrough in 10-15 minutes
+**[→ Getting Started Tutorial](https://github.com/provide-io/terraform-provider-pyvider/blob/main/docs/guides/getting-started.md)** - Complete walkthrough in 10-15 minutes
 
 The tutorial covers:
 - Installing and configuring the provider
@@ -28,9 +28,9 @@ The tutorial covers:
 - Updating and destroying resources
 
 ## Documentation
-- [Documentation index](docs/index.md)
-- [Getting started](docs/guides/getting-started.md)
-- [Examples](examples/README.md)
+- [Documentation index](https://github.com/provide-io/terraform-provider-pyvider/blob/main/docs/index.md)
+- [Getting started](https://github.com/provide-io/terraform-provider-pyvider/blob/main/docs/guides/getting-started.md)
+- [Examples](https://github.com/provide-io/terraform-provider-pyvider/blob/main/examples/README.md)
 
 ## Development
 
@@ -60,13 +60,13 @@ This project uses `wrknv` for task automation. Run `we tasks` to see all availab
 - `we format` - Format code
 - `we typecheck` - Run type checker
 
-See [CLAUDE.md](CLAUDE.md) for detailed development instructions and architecture information.
+See [CLAUDE.md](https://github.com/provide-io/terraform-provider-pyvider/blob/main/CLAUDE.md) for detailed development instructions and architecture information.
 
 ## Contributing
-See [CLAUDE.md](CLAUDE.md) for contribution guidance.
+See [CLAUDE.md](https://github.com/provide-io/terraform-provider-pyvider/blob/main/CLAUDE.md) for contribution guidance.
 
 ## License
-See [LICENSE](LICENSE) for license details.
+See [LICENSE](https://github.com/provide-io/terraform-provider-pyvider/blob/main/LICENSE) for license details.
 
 ## When to Use This Provider
 
@@ -139,3 +139,5 @@ output "path_env" {
   value = data.pyvider_env_variables.path.values["PATH"]
 }
 ```
+
+Copyright (c) Provide.io LLC.
