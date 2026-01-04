@@ -121,7 +121,7 @@ Documentation is generated using Plating:
 plating plate --output-dir docs
 
 # Or using wrknv
-we docs build
+we run docs.build
 ```
 
 ### Updating Documentation
