@@ -420,7 +420,7 @@ variable "port" {
 
 2. **Experimental Features:**
    - Some resources are examples, not production-tested
-   - APIs may change in later versions; timing may change or be removed
+   - APIs may change in later versions; availability may change or be removed
    - Not all pyvider framework features implemented
 
 3. **Performance:**
