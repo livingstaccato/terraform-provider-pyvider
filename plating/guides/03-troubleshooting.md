@@ -476,7 +476,7 @@ variable "port" {
 **How to Build:**
 - Use [pyvider framework](https://github.com/provide-io/pyvider)
 - Reference pyvider-components for examples
-- Follow [pyvider documentation](https://docs.provide.io/pyvider/)
+- Follow [pyvider documentation](https://foundry.provide.io/pyvider/)
 
 ---
 
